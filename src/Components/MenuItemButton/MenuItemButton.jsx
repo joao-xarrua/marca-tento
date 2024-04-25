@@ -2,9 +2,9 @@ import React from 'react'
 import RoundedButton from '../RoundedButton/RoundedButton'
 import IconClickable from '../../assets/IconClickable'
 
-const MenuItemButton = ({title, subtitle, transparent}) => {
+const MenuItemButton = ({title, subtitle, transparent, onClick}) => {
   return (
-    <div className={`group flex rounded-3xl w-full p-5 justify-between items-center 
+    <div onClick={onClick} className={`group flex rounded-3xl w-full p-5 justify-between items-center 
                             ${transparent ? 
                               'bg-white/10 text-white h-28 active:bg-white/30' 
                                 : 

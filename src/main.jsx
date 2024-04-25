@@ -7,11 +7,16 @@ import {
 } from "react-router-dom";
 import NotFound from './Pages/NotFound';
 import Menu from './Pages/Menu';
+import Game from './Pages/Game';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Menu />,
+  },
+  {
+    path: "/game",
+    element: <Game />,
   },
   {
     path: "*",

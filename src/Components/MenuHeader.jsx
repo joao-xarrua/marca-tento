@@ -2,7 +2,7 @@ import React from 'react'
 import RoundedButton from './RoundedButton/RoundedButton'
 import IconUser from '../assets/IconUser'
 
-const Header = () => {
+const MenuHeader = () => {
   return (
     <section className='h-16 flex justify-between items-center mt-3'>
         <div className='text-white'>
@@ -12,9 +12,8 @@ const Header = () => {
         <RoundedButton active={true} href="#">
           <IconUser />
         </RoundedButton>
- 
     </section>
   )
 }
 
-export default Header
+export default MenuHeader
