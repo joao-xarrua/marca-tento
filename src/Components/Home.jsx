@@ -1,11 +1,13 @@
 import React from 'react'
 import MenuItemButton from './MenuItemButton/MenuItemButton'
+import { Navigate, useNavigate } from 'react-router-dom'
 
 const menu = [
   {
     title: 'Novo Jogo',
     subtitle: 'jogo rápido',
     transparent: false,
+    targetPath: '/game'
   },
   {
     title: 'Marcador Livre',
@@ -13,17 +15,19 @@ const menu = [
     transparent: true,
   },
   {
-    title: 'Novo Jogo',
-    subtitle: 'jogo rápido',
+    title: 'Truco Mineiro',
+    subtitle: 'jeitin mineiro',
     transparent: true,
   },
 ]
 
 const Home = () => {
+  const navigate = useNavigate();
+
   return (
     <section className='grow mt-4 flex-col space-y-4'>
-      {menu.map(({title, subtitle, transparent}) => (
-        <MenuItemButton title={title} subtitle={subtitle} transparent={transparent}/>
+      {menu.map(({title, subtitle, transparent, targetPath}) => (
+        <MenuItemButton onClick={() => navigate(targetPath)} key={title} title={title} subtitle={subtitle} transparent={transparent}/>
       ))}
     </section>
   )
