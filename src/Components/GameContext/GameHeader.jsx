@@ -1,7 +1,7 @@
 import React from 'react'
-import IconReturn from '../assets/IconReturn'
-import IconMenu from '../assets/IconMenu'
-import RoundedButton from './RoundedButton/RoundedButton'
+import IconReturn from '../../assets/IconReturn'
+import IconMenu from '../../assets/IconMenu'
+import RoundedButton from '../RoundedButton/RoundedButton'
 import { useNavigate } from 'react-router-dom'
 
 const GameHeader = () => {
