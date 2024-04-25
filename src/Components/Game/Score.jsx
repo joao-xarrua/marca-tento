@@ -1,31 +1,14 @@
-import React, { useState } from 'react'
+import React, {useContext, useState } from 'react'
 import IconTeam from '../../assets/IconTeam'
 import IconAward from '../../assets/IconAward'
 import IconPlus from '../../assets/IconPlus'
 import IconMinus from '../../assets/IconMinus'
+import { GameContext } from '../context/GameContext'
 
 const Score = () => {
-  const [teamOne, setTeamOne] = useState(0)
-  const [teamTwo, setTeamTwo] = useState(0)
-  
-
-  function handleAddOne() {
-      setTeamOne(teamOne+1);
-  }
-  function handleAddTwo() {
-      setTeamTwo(teamTwo+1); 
-  }
-
-  function handleRemoveOne() {
-    if (teamOne > 0) {
-      setTeamOne(teamOne-1);
-    }
-  }
-  function handleRemoveTwo() {
-    if (teamTwo > 0) {
-      setTeamTwo(teamTwo-1);
-    }
-  }
+  // const [teamOne, setTeamOne] = useState(0)
+  // const [teamTwo, setTeamTwo] = useState(0)
+  const {teamOne, teamTwo, handleScore} = useContext(GameContext) 
 
   return (
     <section className='flex flex-col bg-white/30 rounded-3xl w-full p-5 justify-around items-center gap-5'>
@@ -59,12 +42,12 @@ const Score = () => {
       {/* botões */}
       <div className='flex w-full items-center justify-center gap-5'>
         <div className='flex flex-col items-center w-full h-36 from-neutral-100 to-95% to-neutral-400 bg-gradient-120 text-neutral-600 active:bg-gradient-60 rounded-3xl'>
-          <button className='w-full flex items-center basis-3/4 justify-center rounded-t-3xl border-b-2 border-b-neutral-700/30' onClick={handleAddOne}><IconPlus /></button>
-          <button className='w-full flex items-center basis-1/4 justify-center rounded-b-3xl' onClick={handleRemoveOne}><IconMinus /></button>
+          <button className='w-full flex items-center basis-3/4 justify-center rounded-t-3xl border-b-2 border-b-neutral-700/30' id="addOne" onClick={handleScore}><IconPlus /></button>
+          <button className='w-full flex items-center basis-1/4 justify-center rounded-b-3xl' id="removeOne" onClick={handleScore}><IconMinus /></button>
         </div>
         <div className='flex flex-col items-center w-full h-36 from-neutral-100 to-95% to-neutral-400 bg-gradient-120 text-neutral-600 active:bg-gradient-60 rounded-3xl'>
-          <button className='w-full flex items-center basis-3/4 justify-center rounded-t-3xl border-b-2 border-b-neutral-700/30' onClick={handleAddTwo}><IconPlus /></button>
-          <button className='w-full flex items-center basis-1/4 justify-center rounded-b-3xl' onClick={handleRemoveTwo}><IconMinus /></button>
+          <button className='w-full flex items-center basis-3/4 justify-center rounded-t-3xl border-b-2 border-b-neutral-700/30' id="addTwo" onClick={handleScore}><IconPlus /></button>
+          <button className='w-full flex items-center basis-1/4 justify-center rounded-b-3xl' id="removeTwo" onClick={handleScore}><IconMinus /></button>
         </div>
       </div>
       
