@@ -8,11 +8,33 @@ import {
 import NotFound from './Pages/NotFound';
 import Menu from './Pages/Menu';
 import Game from './Pages/Game';
+import Adjustments from './Components/Adjustments';
+import Home from './Components/Home';
+import Configurations from './Components/Configurations';
+import Infos from './Components/Infos';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Menu />,
+    children: [
+      {
+        path: "",
+        element: <Home />
+      },
+      {
+        path: "adjustments",
+        element: <Adjustments />
+      },
+      {
+        path: "configurations",
+        element: <Configurations />
+      },
+      {
+        path: "infos",
+        element: <Infos />
+      }
+    ]
   },
   {
     path: "/game",
