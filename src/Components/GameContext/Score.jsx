@@ -7,6 +7,7 @@ import IconMinus from '../../assets/IconMinus'
 const Score = () => {
   const [teamOne, setTeamOne] = useState(0)
   const [teamTwo, setTeamTwo] = useState(0)
+  
 
   function handleAddOne() {
       setTeamOne(teamOne+1);

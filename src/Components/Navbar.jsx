@@ -4,22 +4,23 @@ import IconHome from '../assets/IconHome'
 import IconInformation from '../assets/IconInformation'
 import IconAdjustments from '../assets/IconAdjustments'
 import IconConfigurations from '../assets/IconConfigurations'
+import { NavLink } from 'react-router-dom'
 
 const menu = [
   {
-    item: 'home',
+    item: '/',
     icon: <IconHome />
   },
   {
-    item: 'rules',
+    item: 'infos',
     icon: <IconInformation />
   },
   {
-    item: 'customize',
+    item: 'adjustments',
     icon: <IconAdjustments />
   },
   {
-    item: 'setting',
+    item: 'configurations',
     icon: <IconConfigurations />
   }
 ];
@@ -32,9 +33,9 @@ const Navbar = () => {
   return (
     <div className='bg-white/10 bottom-0 rounded-3xl px-4 py-2 flex justify-between'>
       {menu.map((option, index)=> (
-        <RoundedButton key={option.item} onClick={() => setActive(index)} active={active === index}>
-          {option.icon}
-        </RoundedButton>
+        <NavLink to={option.item} key={option.item} className={`${active === index && 'bg-neutral-800/10 active:bg-neutral-800/30 group-active:bg-neutral-800/30 rounded-full backdrop-blur-xl'} flex items-center justify-center w-12 h-12 ` } onClick={() => setActive(index)}>
+          {option.icon} 
+        </NavLink>
       ))}
     </div>
   )
