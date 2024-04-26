@@ -12,6 +12,7 @@ import Adjustments from './Components/Adjustments';
 import Home from './Components/Home';
 import Configurations from './Components/Configurations';
 import Infos from './Components/Infos';
+import User from './Pages/User';
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
   {
     path: "/game",
     element: <Game />,
+  },
+  {
+    path: "/user",
+    element: <User />,
   },
   {
     path: "*",
