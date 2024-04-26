@@ -6,9 +6,7 @@ import IconMinus from '../../assets/IconMinus'
 import { GameContext } from '../context/GameContext'
 
 const Score = () => {
-  // const [teamOne, setTeamOne] = useState(0)
-  // const [teamTwo, setTeamTwo] = useState(0)
-  const {teamOne, teamTwo, handleScore} = useContext(GameContext) 
+  const {teamOne, teamTwo, handleScore, total, winner} = useContext(GameContext) 
 
   return (
     <section className='flex flex-col bg-white/30 rounded-3xl w-full p-5 justify-around items-center gap-5'>
@@ -19,7 +17,7 @@ const Score = () => {
         </div>
         <div className='flex gap-2 align-middle items-center bg-neutral-700/40 px-5 py-1 self-start rounded-full text-white'>
           <IconAward className='text-xl'/>
-          <span>1 - 2</span>
+          <span>{total}</span>
         </div>
         <div className='bg-neutral-700/40 p-4 rounded-full'>
           <IconTeam />
@@ -28,15 +26,15 @@ const Score = () => {
       {/* seção do corpo */}
       <div className='flex w-full items-center justify-center gap-4'>
         <div className='flex flex-col justify-between gap-3 text-right'>
-          <span className='text-white text-2xl w-14' style={{direction: 'rtl'}}>Nós</span>
-          <span className='text-white text-8xl w-14' style={{direction: 'rtl'}}>{teamOne}</span>
+          <span className='text-white text-2xl w-14' style={{direction: 'rtl'}}>{teamOne.teamName}</span>
+          <span className='text-white text-8xl w-14' style={{direction: 'rtl'}}>{teamOne.points}</span>
         </div>  
         <div className='pt-6'>
           <span className='text-white text-8xl'>:</span>
         </div>
         <div className='flex flex-col justify-between gap-3 text-left'>
-          <span className='text-white text-2xl w-14'>Eles</span>
-          <span className='text-white text-8xl w-14'>{teamTwo}</span>
+          <span className='text-white text-2xl w-14'>{teamTwo.teamName}</span>
+          <span className='text-white text-8xl w-14'>{teamTwo.points}</span>
         </div>
       </div>
       {/* botões */}
@@ -50,7 +48,6 @@ const Score = () => {
           <button className='w-full flex items-center basis-1/4 justify-center rounded-b-3xl' id="removeTwo" onClick={handleScore}><IconMinus /></button>
         </div>
       </div>
-      
     </section>
   )
 }
