@@ -2,9 +2,9 @@ import React from 'react'
 
 const Infos = () => {
   return (
-    <div>
+    <section className='grow mt-4 flex-col space-y-4'>
       INFO INFO INFO
-    </div>
+    </section>
   )
 }
 

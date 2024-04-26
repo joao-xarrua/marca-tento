@@ -5,7 +5,7 @@ import IconClickable from '../../assets/IconClickable'
 const MenuItemButton = ({title, subtitle, transparent, onClick}) => {
   return (
     <div onClick={onClick} 
-        className={`group flex rounded-3xl w-full p-5 justify-between items-center 
+        className={`group flex rounded-3xl w-full p-5 justify-between items-center cursor-pointer 
           ${transparent ? 
             'bg-white/10 text-white h-28 active:bg-white/30' 
               : 

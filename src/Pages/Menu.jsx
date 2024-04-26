@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import Navbar from '../Components/Navbar'
 import Header from '../Components/MenuHeader'
-import Home from '../Components/Home'
 import { Outlet } from 'react-router-dom'
 
 const Menu = () => {
