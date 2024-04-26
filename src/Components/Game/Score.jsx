@@ -1,15 +1,21 @@
-import React, {useContext, useState } from 'react'
+import React, {useContext, useEffect, useState } from 'react'
 import IconTeam from '../../assets/IconTeam'
 import IconAward from '../../assets/IconAward'
 import IconPlus from '../../assets/IconPlus'
 import IconMinus from '../../assets/IconMinus'
+import Modal from '../Modal/Modal'
 import { GameContext } from '../context/GameContext'
 
 const Score = () => {
-  const {teamOne, teamTwo, handleScore, total, winner} = useContext(GameContext) 
+  const {teamOne, teamTwo, handleScore, total, winner, gameStatus} = useContext(GameContext) 
+  const [modalActive, setModalActive] = useState();
+  useEffect(() => {
+    setModalActive(!gameStatus)
+  }, [gameStatus])
 
   return (
     <section className='flex flex-col bg-white/30 rounded-3xl w-full p-5 justify-around items-center gap-5'>
+      {modalActive && <Modal winner={winner}/>}
       {/* seção do topo */}
       <div className='flex w-full justify-between'>
         <div className='bg-neutral-700/40 p-4 rounded-full'>

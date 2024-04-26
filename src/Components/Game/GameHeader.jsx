@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 
 const GameHeader = () => {
   const navigator = useNavigate();
-
+  
   return (
     <section className='h-16 flex justify-between items-center mt-3'>
         <RoundedButton onClick={() => navigator('/')} active={true} href="#">

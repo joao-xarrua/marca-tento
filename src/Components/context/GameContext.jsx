@@ -14,7 +14,7 @@ export const GameProvider = ({children}) => {
     points: 0
   })
   const [total, setTotal] = useState(12)
-  const [winner, setWinner] = useState()
+  const [winner, setWinner] = useState(false)
   const [gameStatus, setGameStatus] = useState(false);
 
   useEffect(() => {
@@ -23,9 +23,18 @@ export const GameProvider = ({children}) => {
     } else if (teamTwo.points >= total) {
       setWinner(teamTwo)
     } else {
-      setWinner(null)
+      setWinner(false)
     }
   }, [teamOne, teamTwo])
+
+  useEffect(() => {
+    if (winner !== false) {
+      setGameStatus(false)
+    } else {
+      setGameStatus(true)
+    }
+    console.log(gameStatus);
+  }, [winner])
 
   function handleScore(e) {
     if (gameStatus) {
@@ -61,5 +70,5 @@ export const GameProvider = ({children}) => {
     }
   }
 
-  return <GameContext.Provider value={{point, setPoint, activePointOption, setActivePointOption, teamOne, setTeamOne, teamTwo, setTeamTwo, handleScore, total, winner}}>{children}</GameContext.Provider>
+  return <GameContext.Provider value={{point, setPoint, activePointOption, setActivePointOption, teamOne, setTeamOne, teamTwo, setTeamTwo, handleScore, total, winner, gameStatus}}>{children}</GameContext.Provider>
 }
