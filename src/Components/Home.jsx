@@ -10,8 +10,28 @@ const menu = [
     targetPath: '/game'
   },
   {
+    title: 'Personalizado',
+    subtitle: 'defina suas regras',
+    transparent: true,
+  },
+  {
     title: 'Marcador Livre',
-    subtitle: 'jogo rápido',
+    subtitle: 'sem tempo ou limite',
+    transparent: true,
+  },
+  {
+    title: 'Truco Mineiro',
+    subtitle: 'jeitin mineiro',
+    transparent: true,
+  },
+  {
+    title: 'Truco Mineiro',
+    subtitle: 'jeitin mineiro',
+    transparent: true,
+  },
+  {
+    title: 'Truco Mineiro',
+    subtitle: 'jeitin mineiro',
     transparent: true,
   },
   {
@@ -25,7 +45,7 @@ const Home = () => {
   const navigate = useNavigate();
 
   return (
-    <section className='grow mt-4 flex-col space-y-4'>
+    <section  className='grow mt-4 flex-col flex-grow-2 space-y-4 overflow-y-scroll' >
       {menu.map(({title, subtitle, transparent, targetPath}) => (
         <MenuItemButton onClick={() => navigate(targetPath)} key={title} title={title} subtitle={subtitle} transparent={transparent}/>
       ))}
