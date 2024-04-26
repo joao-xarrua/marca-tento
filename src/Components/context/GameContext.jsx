@@ -3,6 +3,7 @@ import { createContext, useEffect, useState } from "react";
 export const GameContext = createContext()
 
 export const GameProvider = ({children}) => {
+  const [gameStatus, setGameStatus] = useState(false)
   const [point, setPoint] = useState(1)
   const [activePointOption, setActivePointOption] = useState(null);
   const [teamOne, setTeamOne] = useState({
@@ -15,7 +16,6 @@ export const GameProvider = ({children}) => {
   })
   const [total, setTotal] = useState(12)
   const [winner, setWinner] = useState(false)
-  const [gameStatus, setGameStatus] = useState(false);
 
   useEffect(() => {
     if (teamOne.points >= total) {

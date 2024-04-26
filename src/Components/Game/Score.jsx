@@ -9,6 +9,7 @@ import { GameContext } from '../context/GameContext'
 const Score = () => {
   const {teamOne, teamTwo, handleScore, total, winner, gameStatus} = useContext(GameContext) 
   const [modalActive, setModalActive] = useState();
+  
   useEffect(() => {
     setModalActive(!gameStatus)
   }, [gameStatus])
