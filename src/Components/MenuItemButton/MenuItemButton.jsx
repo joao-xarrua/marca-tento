@@ -7,7 +7,7 @@ const MenuItemButton = ({title, subtitle, transparent, onClick}) => {
     <div onClick={onClick} 
         className={`group flex rounded-3xl w-full p-5 justify-between items-center cursor-pointer 
           ${transparent ? 
-            'bg-white/10 text-white h-28 active:bg-white/30' 
+            'bg-white/20 text-white h-28 active:bg-white/30' 
               : 
             'from-neutral-100 to-95% to-neutral-400 bg-gradient-120 text-neutral-600 active:bg-gradient-60 h-32'}  
     `}>       

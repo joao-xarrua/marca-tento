@@ -31,7 +31,7 @@ const Navbar = () => {
   const [active, setActive] = useState(0);
 
   return (
-    <div className='bg-white/10 bottom-0 rounded-3xl px-4 py-2 flex justify-between'>
+    <div className='absolute bottom-5 left-4 right-4 bg-white/10 backdrop-blur-sm  rounded-3xl px-4 py-2 flex justify-between'>
       {menu.map((option, index)=> (
         <NavLink to={option.item} key={option.item} className={`${active === index && 'bg-neutral-800/10 active:bg-neutral-800/30 group-active:bg-neutral-800/30 rounded-full backdrop-blur-xl'} flex items-center justify-center w-12 h-12 ` } onClick={() => setActive(index)}>
           {option.icon} 
