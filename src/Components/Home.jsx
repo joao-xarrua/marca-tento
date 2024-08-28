@@ -30,7 +30,7 @@ const Home = () => {
   const navigate = useNavigate();
 
   return (
-    <section className='grow pb-12 mt-4 flex-col flex-grow-2 space-y-4 overflow-y-scroll' >
+    <section className='grow pb-12 mt-4 flex-col flex-grow-2 space-y-4 overflow-auto' >
       {menu.map(({title, subtitle, transparent, targetPath}) => (
         <MenuItemButton onClick={() => navigate(targetPath)} key={title} title={title} subtitle={subtitle} transparent={transparent}/>
       ))}

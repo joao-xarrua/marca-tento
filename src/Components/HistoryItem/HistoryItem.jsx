@@ -18,7 +18,7 @@ const HistoryItem = () => {
               <IconAwardDark />
               <span className='text-neutral-700 text-sm'>12</span>
             </div>
-            <h2 className='text-4xl text-white'>12:10</h2>
+            <h2 className='text-4xl text-white font-mono'>12:10</h2>
             <span className='italic text-xs text-neutral-400'>Sun, 10/04/2024</span>
           </div>
           {/* TIME 2 */}
