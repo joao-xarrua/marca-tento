@@ -9,11 +9,9 @@ import HistoryItem from '../Components/HistoryItem/HistoryItem'
 const User = () => {
   const navigate = useNavigate()
 
-
   return (
-
-    <section className='h-dvh flex flex-col static font-light font-inter'>
-      <div className='flex justify-between px-4 py-9 absolute w-full'>
+    <section className='w-full max-w-2xl h-full flex flex-col static font-light font-inter'>
+      <div className='flex justify-between px-4 py-9 w-full'>
       <RoundedButton active={true} onClick={() => navigate('/')}>
         <IconReturn />
       </RoundedButton>

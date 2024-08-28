@@ -6,10 +6,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    fontFamily: {
-      'inter': ['Inter', 'sans-serif'],
-    },
     extend: {
+      fontFamily: {
+        'inter': ['Inter', 'sans-serif'],
+        'roboto-mono': ['Roboto Mono', 'monospace'],
+      },
       bgGradientDeg: {
         75: '75deg',
       }

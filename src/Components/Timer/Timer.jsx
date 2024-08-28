@@ -29,7 +29,7 @@ const Timer = () => {
   }
 
   return (
-    <span className='text-2xl'>{formatTime(minutes)}:{formatTime(seconds)}</span>
+    <span className='text-2xl font-mono font-extralight'>{formatTime(minutes)}:{formatTime(seconds)}</span>
   )
 }
 
