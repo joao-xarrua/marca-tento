@@ -7,7 +7,7 @@ import { GameProvider } from '../Components/context/GameContext'
 const Game = () => {
 
   return (
-    <section className=' w-full max-w-2xl h-dvh p-4 font-light font-inter flex flex-col justify-between'>
+    <section className='w-full max-w-2xl h-dvh p-4 font-light font-inter flex flex-col justify-between'>
       <GameProvider>
         <GameHeader />
         <Score />

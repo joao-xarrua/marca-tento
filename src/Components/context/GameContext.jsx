@@ -33,7 +33,7 @@ export const GameProvider = ({children}) => {
     } else {
       setGameStatus(true)
     }
-    console.log(gameStatus);
+    
   }, [winner])
 
   function handleScore(e) {
