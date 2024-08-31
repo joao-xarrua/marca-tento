@@ -21,7 +21,6 @@ const Score = () => {
         scoreTotal: total,
         scoreTeamOne: teamOne.points,
         scoreTeamTwo: teamTwo.points,
-        matchDate: '10-10-2010',
         userId: 2
       }
     )

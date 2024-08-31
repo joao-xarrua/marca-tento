@@ -18,8 +18,8 @@ const HistoryItem = ({item}) => {
           <IconAwardDark />
           <span className='text-neutral-700 text-sm'>{item.scoreTotal}</span>
         </div>
-        <h2 className='text-4xl text-white font-mono'>{item.scoreTeamOne}:{item.scoreTeamTwo}</h2>
-        <span className='italic text-xs text-neutral-400'>Sun, 10/04/2024</span>
+        <h2 className='text-4xl text-white font-mono'>{item.scoreTeamOne ? item.scoreTeamOne : '0'}:{item.scoreTeamTwo ? item.scoreTeamTwo : '0'}</h2>
+        <span className='italic text-xs text-neutral-400'>{item.matchDate}</span>
       </div>
       {/* TIME 2 */}
       <div className='flex flex-col items-center gap-2'>

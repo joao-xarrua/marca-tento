@@ -57,9 +57,9 @@ export const GameProvider = ({children}) => {
           break;
         case "removeTwo":
           if (point >= teamTwo.points) {
-            setTeamTwo({...teamTwo.teamName, points: 0})
+            setTeamTwo({...teamTwo, points: 0})
           } else {
-            setTeamTwo({...teamTwo.teamName, points: parseInt(teamTwo.points)-point})
+            setTeamTwo({...teamTwo, points: parseInt(teamTwo.points)-point})
           }
           break;
         default:
