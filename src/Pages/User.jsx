@@ -16,13 +16,17 @@ const User = () => {
     const fetchHistory = async () => {
       setLoading(true);
       const res = await fetch("http://localhost:5215/v1/matches");
+      console.log(res);
       
+
       if (!res.ok) {
         const message = `An error has occured: ${res.errors}`;
         throw new Error(message);
       }
 
       const obj = await res.json();
+      console.log(obj);
+      
       setHistory(obj.data);
       setLoading(false)
     }

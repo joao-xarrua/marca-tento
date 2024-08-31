@@ -8,15 +8,36 @@ import { GameContext } from '../context/GameContext'
 
 const Score = () => {
   const {teamOne, teamTwo, handleScore, total, winner, gameStatus} = useContext(GameContext) 
-  const [modalActive, setModalActive] = useState();
-  
+  const requestOptions = {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(
+      {
+        nameTeamOne: teamOne.teamName,
+        nameTeamTwo: teamTwo.teamName,
+        imageTeamOne: teamOne.teamImage,
+        imageTeamTwo: teamTwo.teamImage,
+        slug: 'default',
+        scoreTotal: total,
+        scoreTeamOne: teamOne.points,
+        scoreTeamTwo: teamTwo.points,
+        matchDate: '10-10-2010',
+        userId: 2
+      }
+    )
+  }
+
   useEffect(() => {
-    setModalActive(!gameStatus)
+    if (gameStatus === false) {
+      fetch("http://localhost:5215/v1/matches", requestOptions)
+        .then(res => console.log(res))
+    }
   }, [gameStatus])
+
 
   return (
     <section className='flex flex-col bg-white/30 rounded-3xl w-full p-5 justify-around items-center gap-5'>
-      {modalActive && <Modal winner={winner}/>}
+      {!gameStatus && <Modal winner={winner}/>}
       {/* seção do topo */}
       <div className='flex w-full justify-between'>
         <div className='bg-neutral-700/40 p-4 rounded-full'>
@@ -34,14 +55,14 @@ const Score = () => {
       <div className='flex w-full items-center justify-center gap-4'>
         <div className='flex flex-col justify-between gap-3 text-right'>
           <span className='text-white text-2xl w-14' style={{direction: 'rtl'}}>{teamOne.teamName}</span>
-          <span className='text-white text-8xl w-14' style={{direction: 'rtl'}}>{teamOne.points}</span>
+          <span className='text-white text-8xl w-14 font-mono' style={{direction: 'rtl'}}>{teamOne.points}</span>
         </div>  
         <div className='pt-6'>
           <span className='text-white text-8xl'>:</span>
         </div>
         <div className='flex flex-col justify-between gap-3 text-left'>
           <span className='text-white text-2xl w-14'>{teamTwo.teamName}</span>
-          <span className='text-white text-8xl w-14'>{teamTwo.points}</span>
+          <span className='text-white text-8xl w-14 font-mono'>{teamTwo.points}</span>
         </div>
       </div>
       {/* botões */}
