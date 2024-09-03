@@ -72,5 +72,5 @@ export const GameProvider = ({children}) => {
     }
   }
 
-  return <GameContext.Provider value={{point, setPoint, activePointOption, setActivePointOption, teamOne, setTeamOne, teamTwo, setTeamTwo, handleScore, total, winner, gameStatus}}>{children}</GameContext.Provider>
+  return <GameContext.Provider value={{point, setPoint, activePointOption, setActivePointOption, teamOne, setTeamOne, teamTwo, setTeamTwo, handleScore, total, setTotal, winner, gameStatus}}>{children}</GameContext.Provider>
 }

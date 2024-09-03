@@ -11,7 +11,7 @@ const MenuItemButton = ({title, subtitle, transparent, onClick}) => {
               : 
             'from-neutral-100 to-95% to-neutral-400 bg-gradient-120 text-neutral-600 active:bg-gradient-60 h-32'}  
     `}>       
-      <div className=''>
+      <div>
           <h1 className={` ${transparent ? 'text-3xl' : 'text-4xl'}`}>{title}</h1>
           <span className='text-md'>{subtitle}</span>
       </div>

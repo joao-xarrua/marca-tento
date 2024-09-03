@@ -7,11 +7,12 @@ import {
 import NotFound from './Pages/NotFound';
 import Menu from './Pages/Menu';
 import Game from './Pages/Game';
-import Adjustments from './Components/Adjustments';
-import Home from './Components/Home';
-import Configurations from './Components/Configurations';
-import Infos from './Components/Infos';
 import User from './Pages/User';
+import Home from './Components/Home';
+import Infos from './Components/Infos';
+import Adjustments from './Components/Adjustments';
+import Configurations from './Components/Configurations'
+import Custom from './Pages/Custom';
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
   {
     path: "/game",
     element: <Game />,
+  },
+  {
+    path: "custom",
+    element: <Custom />
   },
   {
     path: "/user",

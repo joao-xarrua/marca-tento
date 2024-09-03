@@ -9,29 +9,20 @@ import HistoryItem from '../Components/HistoryItem/HistoryItem'
 const User = () => {
   const navigate = useNavigate()
   const [history, setHistory] = useState(null)
-  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     // mostruoso fez o fetch assincrono ai papai chama
     const fetchHistory = async () => {
-      setLoading(true);
       const res = await fetch("http://localhost:5215/v1/matches");
-      console.log(res);
-      
-
       if (!res.ok) {
         const message = `An error has occured: ${res.errors}`;
         throw new Error(message);
       }
-
-      const obj = await res.json();
-      console.log(obj);
-      
-      setHistory(obj.data);
-      setLoading(false)
+      const obj = await res.json();      
+      setHistory(obj.data.reverse());
     }
     fetchHistory();
-
+    
   }, [])
 
   return (
