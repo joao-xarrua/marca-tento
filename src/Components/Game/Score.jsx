@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState } from 'react'
+import React, {useContext, useEffect } from 'react'
 import IconTeam from '../../assets/IconTeam'
 import IconAward from '../../assets/IconAward'
 import IconPlus from '../../assets/IconPlus'
@@ -7,7 +7,7 @@ import Modal from '../Modal/Modal'
 import { GameContext } from '../context/GameContext'
 
 const Score = () => {
-  const {teamOne, teamTwo, handleScore, total, winner, gameStatus} = useContext(GameContext) 
+  const {teamOne, setTeamOne, teamTwo, setTeamTwo, handleScore, total, setTotal, winner, gameStatus} = useContext(GameContext) 
   const requestOptions = {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
@@ -25,6 +25,12 @@ const Score = () => {
       }
     )
   }
+
+  useEffect(() => {
+    setTeamOne({...teamOne, teamName: localStorage.getItem('teamOne')})
+    setTeamTwo({...teamTwo, teamName: localStorage.getItem('teamTwo')})
+    setTotal(parseInt(localStorage.getItem('total')))
+  }, [])
 
   useEffect(() => {
     if (gameStatus === false) {
