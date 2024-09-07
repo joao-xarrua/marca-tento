@@ -18,12 +18,11 @@ const User = () => {
         const message = `An error has occured: ${res.errors}`;
         throw new Error(message);
       }
-      const obj = await res.json();      
+      const obj = await res.json();
       setHistory(obj.data.reverse());
     }
     fetchHistory();
-    
-  }, [])
+  }, [history])
 
   return (
     <section className='w-full max-w-2xl min-h-dvh h-full flex flex-col static font-light font-inter'>
@@ -48,7 +47,7 @@ const User = () => {
       </div>
       <div className='p-4 grow flex flex-col gap-5'>
         {history && history.map((item) => ( // fazer a comparação para que caso haja o reload da página não dê erro no state
-          <HistoryItem key={item.id} item={item}/>
+          <HistoryItem key={item.id} jsId={item.id} item={item}/>
         ))}
       </div>
     </section>

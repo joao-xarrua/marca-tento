@@ -13,7 +13,7 @@ const Home = () => {
       funcOnClick: () => { // muito massa que isso pode ser uma função
         localStorage.setItem('teamOne', 'Nós')
         localStorage.setItem('teamTwo', 'Eles')
-        localStorage.setItem('points', 12)
+        localStorage.setItem('total', 12)
         navigate('/game')
       }
     },
@@ -29,6 +29,12 @@ const Home = () => {
       title: 'Marcador Livre',
       subtitle: 'sem limite',
       transparent: true,
+      funcOnClick: () => {
+        localStorage.setItem('teamOne', 'Nós')
+        localStorage.setItem('teamTwo', 'Eles')
+        localStorage.setItem('total', 999)
+        navigate('/game')
+      }
     },
     {
       title: 'Truco Mineiro',

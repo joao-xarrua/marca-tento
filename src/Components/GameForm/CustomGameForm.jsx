@@ -1,9 +1,7 @@
-import React, { useContext, useState } from 'react'
-import {GameContext} from '../context/GameContext'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const CustomGameForm = () => {
-  const teste = useContext(GameContext)
   const navigate = useNavigate()
   const [teamOneInput, setTeamOneInput] = useState("Nós")
   const [teamTwoInput, setTeamTwoInput] = useState("Eles")

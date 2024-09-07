@@ -1,10 +1,20 @@
 import React from 'react'
 import IconTeamDark from '../../assets/IconTeamDark'
 import IconAwardDark from '../../assets/IconAwardDark'
+import IconTrash from '../../assets/IconTrash'
 
 const HistoryItem = ({item}) => {
+  const handleDelete = () => {
+    fetch(`http://localhost:5215/v1/matches/${item.id}`, {
+      method: 'DELETE'
+    })
+  }
+
+
   return (
     <div className='p-5 bg-neutral-700 rounded-3xl flex justify-center gap-4'>
+      {/* LIXEIRA */}
+      <IconTrash onClick={() => handleDelete()}  className='absolute right-10 cursor-pointer'/>
       {/* TIME 1 */}
       <div className='flex flex-col items-center gap-2'>
         <div className='p-5 rounded-full bg-white'>
